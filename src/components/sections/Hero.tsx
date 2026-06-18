@@ -1,6 +1,8 @@
 import Image from "next/image";
 import CTAButton from "@/components/ui/CTAButton";
 import { site } from "@/lib/site";
+// 静的インポートにすることで、GitHub Pages の basePath を含む正しいパスが出力される
+import heroCity from "../../../public/images/hero-city.png";
 
 /**
  * ファーストビュー（分割レイアウト）。
@@ -14,7 +16,7 @@ export default function Hero() {
         {/* ビジュアル（モバイル=上 / PC=右） */}
         <div className="relative order-1 min-h-[52vh] overflow-hidden lg:order-2 lg:min-h-screen">
           <Image
-            src="/images/hero-city.png"
+            src={heroCity}
             alt="夕暮れの都市と高層マンションの街並み"
             fill
             priority
