@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/*
+  デザイントークン
+  ベースカラー：白ベース ＋ ブルー ＋ 黒
+  高級感／都会的／信頼感／余白の効いたトーン
+*/
+@theme {
+  --color-ink: #0d1018;
+  --color-ink-soft: #161b27;
+  --color-graphite: #232b3a;
+  --color-stone: #5d6577;
+  --color-mist: #aeb6c6;
+  --color-cloud: #eef2f8;
+  --color-paper: #fbfcfe;
+  --color-brand: #1d4ed8;
+  --color-brand-soft: #5b86e0;
+  --color-brand-deep: #14306e;
+
+  --font-sans: var(--font-zen-kaku), "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", "Yu Gothic", sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond",
+    "Times New Roman", serif;
+
+  --tracking-wide-jp: 0.08em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    letter-spacing: var(--tracking-wide-jp);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* スクロール時にアンカー位置がヘッダーに隠れないように */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+@layer utilities {
+  /* 英字見出し用のセリフ体 */
+  .font-display {
+    font-family: var(--font-serif);
+    letter-spacing: 0.02em;
+  }
+
+  /* 控えめなフェードイン（IntersectionObserverで .is-visible 付与） */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
