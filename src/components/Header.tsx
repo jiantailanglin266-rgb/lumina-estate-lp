@@ -21,10 +21,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        className={`fixed inset-x-0 top-0 z-50 bg-paper/85 backdrop-blur-sm transition-all duration-500 ${
           scrolled || menuOpen
-            ? "bg-paper/90 backdrop-blur-sm shadow-[0_1px_0_rgba(24,24,27,0.08)]"
-            : "bg-transparent"
+            ? "shadow-[0_1px_0_rgba(24,24,27,0.08)]"
+            : ""
         }`}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
