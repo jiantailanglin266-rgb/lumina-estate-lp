@@ -2,20 +2,20 @@
 
 /*
   デザイントークン
-  ベースカラー：白ベース ＋ ブルー ＋ 黒
-  高級感／都会的／信頼感／余白の効いたトーン
+  ベースカラー：白 ＋ 黒 ＋ グレー（モノトーン）
+  明るい・クリーン・洗練された印象
 */
 @theme {
-  --color-ink: #0d1018;
-  --color-ink-soft: #161b27;
-  --color-graphite: #232b3a;
-  --color-stone: #5d6577;
-  --color-mist: #aeb6c6;
-  --color-cloud: #eef2f8;
-  --color-paper: #fbfcfe;
-  --color-brand: #1d4ed8;
-  --color-brand-soft: #5b86e0;
-  --color-brand-deep: #14306e;
+  --color-ink: #18181b;
+  --color-ink-soft: #26262b;
+  --color-graphite: #3a3a42;
+  --color-stone: #71717a;
+  --color-mist: #c6c7cc;
+  --color-cloud: #f4f4f5;
+  --color-paper: #ffffff;
+  --color-brand: #18181b;
+  --color-brand-soft: #5b5b63;
+  --color-brand-deep: #000000;
 
   --font-sans: var(--font-zen-kaku), "Hiragino Kaku Gothic ProN",
     "Noto Sans JP", "Yu Gothic", sans-serif;

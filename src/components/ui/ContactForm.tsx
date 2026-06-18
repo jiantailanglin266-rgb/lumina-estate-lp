@@ -151,7 +151,7 @@ export default function ContactForm() {
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
           required
-          className="mt-1 h-4 w-4 accent-[#1d4ed8]"
+          className="mt-1 h-4 w-4 accent-[#18181b]"
         />
         <span>
           個人情報の取り扱いに同意します。ご入力いただいた情報はお問い合わせ対応の目的にのみ使用します。
@@ -161,7 +161,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={!consent || status === "submitting"}
-        className="group inline-flex w-full items-center justify-center gap-3 bg-ink px-8 py-4 text-sm tracking-[0.12em] text-paper transition-all duration-300 hover:bg-brand hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
+        className="group inline-flex w-full items-center justify-center gap-3 bg-ink px-8 py-4 text-sm tracking-[0.12em] text-paper transition-all duration-300 hover:bg-graphite disabled:cursor-not-allowed disabled:opacity-40"
       >
         {status === "submitting" ? "送信中…" : "この内容で送信する"}
         {status !== "submitting" && (

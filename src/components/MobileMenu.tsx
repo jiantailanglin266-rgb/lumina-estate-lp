@@ -31,7 +31,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       }`}
       aria-hidden={!open}
     >
-      <div className="absolute inset-0 bg-ink" />
+      <div className="absolute inset-0 bg-paper" />
 
       <nav className="relative flex h-full flex-col justify-center px-8 pt-20">
         <ul className="space-y-1">
@@ -45,10 +45,10 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   transitionDelay: open ? `${i * 40 + 100}ms` : "0ms",
                 }}
               >
-                <span className="font-display text-xs text-brand">
+                <span className="font-display text-xs text-stone">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="text-2xl font-light text-paper transition-colors duration-300 group-hover:text-brand">
+                <span className="text-2xl font-light text-ink transition-colors duration-300 group-hover:text-stone">
                   {item.label}
                 </span>
               </a>
@@ -60,28 +60,28 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           <a
             href="#contact"
             onClick={onClose}
-            className="flex w-full items-center justify-center gap-2 bg-brand px-6 py-4 text-sm tracking-[0.12em] text-ink"
+            className="flex w-full items-center justify-center gap-2 bg-ink px-6 py-4 text-sm tracking-[0.12em] text-paper"
           >
             無料相談する
           </a>
           <a
             href="#works"
             onClick={onClose}
-            className="flex w-full items-center justify-center gap-2 border border-paper/40 px-6 py-4 text-sm tracking-[0.12em] text-paper"
+            className="flex w-full items-center justify-center gap-2 border border-ink/30 px-6 py-4 text-sm tracking-[0.12em] text-ink"
           >
             売却査定を依頼する
           </a>
         </div>
 
-        <div className="mt-12 border-t border-paper/15 pt-8">
-          <p className="text-[10px] tracking-[0.3em] text-brand">CALL</p>
+        <div className="mt-12 border-t border-ink/10 pt-8">
+          <p className="text-[10px] tracking-[0.3em] text-stone">CALL</p>
           <a
             href={`tel:${site.tel.replace(/-/g, "")}`}
-            className="mt-2 block font-display text-2xl tracking-wide text-paper"
+            className="mt-2 block font-display text-2xl tracking-wide text-ink"
           >
             {site.telLabel}
           </a>
-          <p className="mt-1 text-xs text-mist">{site.telHours}</p>
+          <p className="mt-1 text-xs text-stone">{site.telHours}</p>
         </div>
       </nav>
     </div>

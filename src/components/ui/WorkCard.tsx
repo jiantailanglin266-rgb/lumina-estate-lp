@@ -8,26 +8,26 @@ export default function WorkCard({ work, index }: { work: Work; index: number })
   return (
     <article className="group overflow-hidden border border-ink/10 bg-paper transition-all duration-500 hover:border-brand/50 hover:shadow-[0_24px_60px_-30px_rgba(14,14,16,0.45)]">
       {/* ダミー画像エリア */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-graphite">
+      <div className="relative aspect-[16/10] overflow-hidden bg-cloud">
         <div
-          className="absolute inset-0 opacity-90 transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
           style={{
             backgroundImage:
-              "linear-gradient(135deg, #1a1a1e 0%, #2b2b30 45%, #3a3a40 100%)",
+              "linear-gradient(135deg, #ededee 0%, #e0e0e2 45%, #d2d2d6 100%)",
           }}
         />
         <div
-          className="absolute inset-0 opacity-[0.18]"
+          className="absolute inset-0 opacity-60"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(90deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(0deg, rgba(255,255,255,0.4) 0px, rgba(255,255,255,0.4) 1px, transparent 1px, transparent 26px)",
+              "repeating-linear-gradient(90deg, rgba(24,24,27,0.06) 0px, rgba(24,24,27,0.06) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(0deg, rgba(24,24,27,0.05) 0px, rgba(24,24,27,0.05) 1px, transparent 1px, transparent 26px)",
           }}
           aria-hidden="true"
         />
-        <span className="absolute left-5 top-5 font-display text-xs tracking-[0.3em] text-paper/70">
+        <span className="absolute left-5 top-5 font-display text-xs tracking-[0.3em] text-ink/40">
           CASE {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="absolute bottom-5 left-5 text-sm font-medium text-paper">
+        <span className="absolute bottom-5 left-5 text-sm font-medium text-ink">
           {work.area}
         </span>
       </div>

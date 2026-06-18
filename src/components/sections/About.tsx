@@ -24,7 +24,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="bg-paper py-24 md:py-32">
+    <section id="about" className="bg-cloud py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">

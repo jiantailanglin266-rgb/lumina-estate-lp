@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 type CTAButtonProps = {
   href: string;
   children: ReactNode;
-  /** primary=ゴールド塗り / outline=枠線 / ghost=暗背景用の白枠 */
+  /** primary=黒塗り / outline=黒枠 / ghost=淡いグレー枠 */
   variant?: "primary" | "outline" | "ghost";
   className?: string;
 };
@@ -13,12 +13,10 @@ const base =
   "group inline-flex items-center justify-center gap-3 px-8 py-4 text-sm tracking-[0.12em] transition-all duration-300 ease-out";
 
 const variants: Record<NonNullable<CTAButtonProps["variant"]>, string> = {
-  primary:
-    "bg-brand text-ink hover:bg-brand-deep hover:text-paper",
-  outline:
-    "border border-ink/30 text-ink hover:border-brand hover:text-brand",
+  primary: "bg-ink text-paper hover:bg-graphite",
+  outline: "border border-ink/30 text-ink hover:bg-ink hover:text-paper",
   ghost:
-    "border border-paper/40 text-paper hover:border-brand hover:text-brand",
+    "border border-ink/15 text-stone hover:border-ink hover:text-ink",
 };
 
 /**

@@ -8,14 +8,13 @@ import { site } from "@/lib/site";
  */
 export default function Contact() {
   return (
-    <section id="contact" className="bg-ink py-24 text-paper md:py-32">
+    <section id="contact" className="bg-paper py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* リード */}
         <div className="text-center">
           <SectionHeading
             en="Contact"
             ja="まずは、お気軽にご相談ください。"
-            tone="dark"
             align="center"
             lead="売却査定・購入相談・投資のご相談まで、すべて無料で承ります。しつこい営業は一切いたしません。"
           />
@@ -23,24 +22,24 @@ export default function Contact() {
 
         {/* 電話CTA */}
         <Reveal className="mt-12">
-          <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 border border-paper/15 bg-ink-soft px-8 py-10 text-center">
-            <p className="font-display text-[11px] tracking-[0.3em] text-brand">
+          <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 border border-ink/10 bg-cloud px-8 py-10 text-center">
+            <p className="font-display text-[11px] tracking-[0.3em] text-stone">
               CALL US
             </p>
             <a
               href={`tel:${site.tel.replace(/-/g, "")}`}
-              className="font-display text-4xl tracking-wide text-paper md:text-5xl"
+              className="font-display text-4xl tracking-wide text-ink md:text-5xl"
             >
               {site.telLabel}
             </a>
-            <p className="text-xs text-mist">{site.telHours}</p>
+            <p className="text-xs text-stone">{site.telHours}</p>
           </div>
         </Reveal>
 
         {/* フォーム */}
         <Reveal className="mx-auto mt-16 max-w-3xl">
-          <div className="bg-paper p-8 text-ink md:p-12">
-            <p className="font-display text-[11px] tracking-[0.3em] text-brand">
+          <div className="border border-ink/10 bg-cloud p-8 text-ink md:p-12">
+            <p className="font-display text-[11px] tracking-[0.3em] text-stone">
               CONTACT FORM
             </p>
             <h3 className="mt-3 text-xl font-medium">お問い合わせフォーム</h3>
