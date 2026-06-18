@@ -11,8 +11,9 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   trailingSlash: true,
+  // basePath だけを設定すれば _next アセットも自動的に前置される。
+  // assetPrefix は併用するとパスが二重スラッシュになるため設定しない。
   basePath: isPages ? `/${repo}` : "",
-  assetPrefix: isPages ? `/${repo}/` : "",
   images: {
     // 静的書き出しでは画像最適化を無効化（本サイトは next/image 未使用）
     unoptimized: true,
