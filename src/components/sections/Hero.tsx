@@ -2,12 +2,14 @@ import Image from "next/image";
 import CTAButton from "@/components/ui/CTAButton";
 import { site } from "@/lib/site";
 // 静的インポートにすることで、GitHub Pages の basePath を含む正しいパスが出力される
-import heroKey from "../../../public/images/hero-key.png";
+import heroSlide1 from "../../../public/images/hero-slide-1.png";
+import heroSlide2 from "../../../public/images/hero-slide-2.png";
 
 /**
  * ファーストビュー。
- * 都市キービジュアルを全面背景に敷き、下部に日本語コピー＋CTAを重ねる。
- * 下部には白のスクリムを敷き、ダーク文字の可読性を確保。
+ * 背景キービジュアルを2枚（ブランドロゴ／AIシティスケープ）で
+ * 4秒ずつクロスフェード（CSSアニメーションのみ・JS不要）。
+ * 下部に日本語コピー＋CTAを白スクリム上に重ねる。
  */
 export default function Hero() {
   return (
@@ -15,27 +17,37 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen overflow-hidden bg-paper"
     >
-      {/* キービジュアル */}
-      <Image
-        src={heroKey}
-        alt="夕景の都市と高層ビル群のスカイライン"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-top"
-      />
+      {/* 背景スライド（クロスフェード） */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <Image
+          src={heroSlide1}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-slide hero-slide--1 object-cover object-center"
+        />
+        <Image
+          src={heroSlide2}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-slide hero-slide--2 object-cover object-top"
+        />
+      </div>
 
-      {/* 下部の可読性スクリム（白）。日本語コピーを英語見出しと分離 */}
+      {/* 下部の可読性スクリム（白）。日本語コピーを座らせる */}
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(to top, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.97) 24%, rgba(255,255,255,0.7) 38%, rgba(255,255,255,0) 52%)",
+            "linear-gradient(to top, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.9) 12%, rgba(255,255,255,0.55) 24%, rgba(255,255,255,0) 40%)",
         }}
       />
 
-      {/* コピー（下部・左寄せ）。英語見出しと衝突しないよう下部にコンパクトに配置 */}
+      {/* コピー（下部・左寄せ） */}
       <div className="relative z-10 flex min-h-screen items-end">
         <div className="mx-auto w-full max-w-7xl px-6 pb-14 lg:px-10 lg:pb-16">
           <div className="max-w-2xl">
@@ -69,14 +81,30 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* キーフレーム */}
+      {/* アニメーション定義 */}
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        /* 2枚クロスフェード：1サイクル8秒（各4秒表示・約0.5秒で交差） */
+        @keyframes heroFade {
+          0%     { opacity: 1; }
+          43.75% { opacity: 1; }
+          50%    { opacity: 0; }
+          93.75% { opacity: 0; }
+          100%   { opacity: 1; }
+        }
+        .hero-slide {
+          animation: heroFade 8s ease-in-out infinite;
+          will-change: opacity;
+        }
+        .hero-slide--2 { animation-delay: -4s; }
         @media (prefers-reduced-motion: reduce) {
           [style*="fadeUp"] { opacity: 1 !important; animation: none !important; transform: none !important; }
+          .hero-slide { animation: none !important; }
+          .hero-slide--1 { opacity: 1 !important; }
+          .hero-slide--2 { opacity: 0 !important; }
         }
       `}</style>
     </section>
