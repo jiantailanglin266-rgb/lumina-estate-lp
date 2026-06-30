@@ -31,7 +31,7 @@ export default function SectionHeading({
     >
       <p
         className={`font-display text-sm tracking-[0.35em] uppercase ${
-          isDark ? "text-brand-soft" : "text-brand"
+          isDark ? "text-gold-soft" : "text-gold"
         }`}
       >
         {en}
@@ -44,7 +44,7 @@ export default function SectionHeading({
         {ja}
       </h2>
       <span
-        className={`mt-6 block h-px w-12 bg-brand ${isCenter ? "mx-auto" : ""}`}
+        className={`mt-6 block h-px w-12 bg-gold ${isCenter ? "mx-auto" : ""}`}
         aria-hidden="true"
       />
       {lead ? (

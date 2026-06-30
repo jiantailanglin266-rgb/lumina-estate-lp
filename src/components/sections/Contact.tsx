@@ -23,7 +23,7 @@ export default function Contact() {
         {/* 電話CTA */}
         <Reveal className="mt-12">
           <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 border border-ink/10 bg-cloud px-8 py-10 text-center">
-            <p className="font-display text-[11px] tracking-[0.3em] text-stone">
+            <p className="font-display text-[11px] tracking-[0.3em] text-gold">
               CALL US
             </p>
             <a
@@ -39,7 +39,7 @@ export default function Contact() {
         {/* フォーム */}
         <Reveal className="mx-auto mt-16 max-w-3xl">
           <div className="border border-ink/10 bg-cloud p-8 text-ink md:p-12">
-            <p className="font-display text-[11px] tracking-[0.3em] text-stone">
+            <p className="font-display text-[11px] tracking-[0.3em] text-gold">
               CONTACT FORM
             </p>
             <h3 className="mt-3 text-xl font-medium">お問い合わせフォーム</h3>

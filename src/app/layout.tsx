@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   },
   description: site.description,
   keywords: [
+    "KACHINOVA",
+    "カチノヴァ",
     "不動産",
     "中古マンション買取",
     "買取再販",

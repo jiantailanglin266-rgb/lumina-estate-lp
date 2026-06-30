@@ -15,8 +15,8 @@ export default function Footer() {
             <p className="font-display text-2xl tracking-[0.28em]">
               {site.brand}
             </p>
-            <p className="mt-2 text-[10px] tracking-[0.3em] text-mist">
-              REAL ESTATE
+            <p className="mt-2 text-[10px] tracking-[0.3em] text-gold-soft">
+              {site.tagline.toUpperCase()}
             </p>
             <p className="mt-8 max-w-sm text-sm leading-loose text-mist">
               {site.catch}
@@ -27,13 +27,13 @@ export default function Footer() {
 
           {/* ナビ */}
           <div className="md:col-span-3">
-            <p className="text-[10px] tracking-[0.3em] text-mist">SITE MAP</p>
+            <p className="text-[10px] tracking-[0.3em] text-gold-soft">SITE MAP</p>
             <ul className="mt-6 space-y-3">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-sm text-mist transition-colors duration-300 hover:text-paper"
+                    className="text-sm text-mist transition-colors duration-300 hover:text-gold-soft"
                   >
                     {item.label}
                   </a>
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* 連絡先 */}
           <div className="md:col-span-4">
-            <p className="text-[10px] tracking-[0.3em] text-mist">CONTACT</p>
+            <p className="text-[10px] tracking-[0.3em] text-gold-soft">CONTACT</p>
             <a
               href={`tel:${site.tel.replace(/-/g, "")}`}
               className="mt-6 block font-display text-3xl tracking-wide"
@@ -57,7 +57,7 @@ export default function Footer() {
             </p>
             <a
               href="#contact"
-              className="mt-8 inline-flex items-center gap-2 border border-paper/50 px-6 py-3 text-xs tracking-[0.12em] text-paper transition-all duration-300 hover:bg-paper hover:text-ink"
+              className="mt-8 inline-flex items-center gap-2 border border-gold-soft/60 px-6 py-3 text-xs tracking-[0.12em] text-gold-soft transition-all duration-300 hover:bg-gold-soft hover:text-ink"
             >
               無料相談する
               <span aria-hidden="true">→</span>

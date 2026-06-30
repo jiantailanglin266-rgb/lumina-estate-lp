@@ -3,17 +3,18 @@
  * すべて架空（ダミー）の情報です。実運用時はここを差し替えてください。
  */
 export const site = {
-  brand: "LUMINA ESTATE",
-  company: "株式会社ルミナエステート",
+  brand: "KACHINOVA",
+  tagline: "Technology Meets Estate",
+  company: "KACHINOVA株式会社",
   catch: "不動産の価値を、磨き上げる。",
   description:
-    "中古マンションの仕入れ・買取再販・不動産売買・資産形成サポート。仕入れから販売まで一気通貫で、資産価値を最大化する不動産会社です。",
+    "中古マンションの仕入れ・買取再販・不動産売買・資産形成サポート。テクノロジーと相場分析を掛け合わせ、仕入れから販売まで一気通貫で資産価値を最大化する不動産会社です。",
   url: "https://jiantailanglin266-rgb.github.io/lumina-estate-lp",
   tel: "03-0000-0000",
   telLabel: "03-0000-0000",
   telHours: "平日 10:00–19:00",
   email: "info@example.com",
-  address: "〒100-0000 東京都千代田区丸の内0-0-0 ルミナビル10F",
+  address: "〒100-0000 東京都千代田区丸の内0-0-0 KACHINOVAビル10F",
   license: "東京都知事免許（1）第00000号",
   representative: "代表取締役　日向 玲二",
   established: "2014年4月",

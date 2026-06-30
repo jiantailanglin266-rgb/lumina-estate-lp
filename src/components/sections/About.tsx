@@ -40,7 +40,7 @@ export default function About() {
               {pillars.map((p, i) => (
                 <Reveal key={p.no} delay={i * 80}>
                   <div className="grid grid-cols-[auto_1fr] gap-6 border-b border-ink/10 py-8 md:gap-10 md:py-10">
-                    <span className="font-display text-3xl text-brand md:text-4xl">
+                    <span className="font-display text-3xl text-gold md:text-4xl">
                       {p.no}
                     </span>
                     <div>

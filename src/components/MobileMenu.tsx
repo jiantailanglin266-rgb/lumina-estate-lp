@@ -45,10 +45,10 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   transitionDelay: open ? `${i * 40 + 100}ms` : "0ms",
                 }}
               >
-                <span className="font-display text-xs text-stone">
+                <span className="font-display text-xs text-gold">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="text-2xl font-light text-ink transition-colors duration-300 group-hover:text-stone">
+                <span className="text-2xl font-light text-ink transition-colors duration-300 group-hover:text-gold">
                   {item.label}
                 </span>
               </a>
@@ -74,7 +74,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         </div>
 
         <div className="mt-12 border-t border-ink/10 pt-8">
-          <p className="text-[10px] tracking-[0.3em] text-stone">CALL</p>
+          <p className="text-[10px] tracking-[0.3em] text-gold">CALL</p>
           <a
             href={`tel:${site.tel.replace(/-/g, "")}`}
             className="mt-2 block font-display text-2xl tracking-wide text-ink"

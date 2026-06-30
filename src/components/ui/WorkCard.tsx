@@ -6,7 +6,7 @@ import type { Work } from "@/lib/content";
  */
 export default function WorkCard({ work, index }: { work: Work; index: number }) {
   return (
-    <article className="group overflow-hidden border border-ink/10 bg-paper transition-all duration-500 hover:border-brand/50 hover:shadow-[0_24px_60px_-30px_rgba(14,14,16,0.45)]">
+    <article className="group overflow-hidden border border-ink/10 bg-paper transition-all duration-500 hover:border-gold/50 hover:shadow-[0_24px_60px_-30px_rgba(14,14,16,0.45)]">
       {/* ダミー画像エリア */}
       <div className="relative aspect-[16/10] overflow-hidden bg-cloud">
         <div
@@ -45,15 +45,15 @@ export default function WorkCard({ work, index }: { work: Work; index: number })
             <dd className="text-right text-sm text-ink">{work.renovation}</dd>
           </div>
           <div className="flex items-end justify-between gap-4">
-            <dt className="text-xs text-brand">販売価格</dt>
-            <dd className="font-display text-2xl text-brand-deep">
+            <dt className="text-xs text-gold">販売価格</dt>
+            <dd className="font-display text-2xl text-gold">
               {work.sale}
             </dd>
           </div>
         </dl>
 
         <p className="mt-6 inline-flex items-center gap-2 text-xs tracking-[0.12em] text-stone">
-          <span className="h-px w-5 bg-brand" aria-hidden="true" />
+          <span className="h-px w-5 bg-gold" aria-hidden="true" />
           {work.period}
         </p>
       </div>

@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { navItems, site } from "@/lib/site";
 import MobileMenu from "./MobileMenu";
+import logo from "../../public/images/logo-kachinova-trim.png";
 
 /**
  * 共通ヘッダー。スクロールで背景を出し、PCはナビ、SPはハンバーガー。
@@ -21,21 +23,21 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 bg-paper/85 backdrop-blur-sm transition-all duration-500 ${
+        className={`fixed inset-x-0 top-0 z-50 bg-paper/92 backdrop-blur-sm transition-all duration-500 ${
           scrolled || menuOpen
-            ? "shadow-[0_1px_0_rgba(24,24,27,0.08)]"
+            ? "shadow-[0_1px_0_rgba(176,133,63,0.25)]"
             : ""
         }`}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:h-24 lg:px-10">
           {/* ロゴ */}
-          <a href="#hero" className="flex flex-col leading-none">
-            <span className="font-display text-xl tracking-[0.28em] text-ink">
-              {site.brand}
-            </span>
-            <span className="mt-1 text-[10px] tracking-[0.3em] text-stone">
-              REAL ESTATE
-            </span>
+          <a href="#hero" className="flex items-center" aria-label={`${site.brand} ホーム`}>
+            <Image
+              src={logo}
+              alt={`${site.brand} ロゴ`}
+              priority
+              className="h-12 w-auto lg:h-16"
+            />
           </a>
 
           {/* PCナビ */}
@@ -44,14 +46,14 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-xs tracking-[0.1em] text-stone transition-colors duration-300 hover:text-ink"
+                className="text-xs tracking-[0.1em] text-stone transition-colors duration-300 hover:text-gold"
               >
                 {item.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="ml-2 inline-flex items-center gap-2 border border-ink px-5 py-2.5 text-xs tracking-[0.12em] text-ink transition-all duration-300 hover:bg-ink hover:text-paper"
+              className="ml-2 inline-flex items-center gap-2 border border-gold px-5 py-2.5 text-xs tracking-[0.12em] text-gold transition-all duration-300 hover:bg-gold hover:text-paper"
             >
               無料相談する
             </a>

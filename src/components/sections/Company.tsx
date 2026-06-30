@@ -37,7 +37,7 @@ export default function Company() {
                     key={row.label}
                     className="grid grid-cols-1 gap-2 border-b border-ink/15 py-5 sm:grid-cols-[160px_1fr] sm:gap-8 sm:py-6"
                   >
-                    <dt className="text-xs tracking-[0.15em] text-brand-deep">
+                    <dt className="text-xs tracking-[0.15em] text-gold">
                       {row.label}
                     </dt>
                     <dd className="text-sm leading-loose text-ink">

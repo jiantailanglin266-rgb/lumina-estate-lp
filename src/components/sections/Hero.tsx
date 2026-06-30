@@ -2,63 +2,62 @@ import Image from "next/image";
 import CTAButton from "@/components/ui/CTAButton";
 import { site } from "@/lib/site";
 // 静的インポートにすることで、GitHub Pages の basePath を含む正しいパスが出力される
-import heroCity from "../../../public/images/hero-city.png";
+import heroKey from "../../../public/images/hero-key.png";
 
 /**
- * ファーストビュー（分割レイアウト）。
- * 左：白地に黒文字のキャッチコピー＋CTA／右：都市・マンションのキービジュアル。
- * モバイルは「写真 → コピー」の縦積み。
+ * ファーストビュー。
+ * 都市キービジュアルを全面背景に敷き、下部に日本語コピー＋CTAを重ねる。
+ * 下部には白のスクリムを敷き、ダーク文字の可読性を確保。
  */
 export default function Hero() {
   return (
-    <section id="hero" className="relative bg-paper">
-      <div className="grid min-h-screen lg:grid-cols-2">
-        {/* ビジュアル（モバイル=上 / PC=右） */}
-        <div className="relative order-1 min-h-[52vh] overflow-hidden lg:order-2 lg:min-h-screen">
-          <Image
-            src={heroCity}
-            alt="夕暮れの都市と高層マンションの街並み"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-center"
-          />
-          {/* 左端をほんのり白へなじませ、テキスト面との境界を柔らかく（PCのみ） */}
-          <div
-            className="pointer-events-none absolute inset-0 hidden lg:block"
-            aria-hidden="true"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 22%)",
-            }}
-          />
-        </div>
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden bg-paper"
+    >
+      {/* キービジュアル */}
+      <Image
+        src={heroKey}
+        alt="夕景の都市と高層ビル群のスカイライン"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-top"
+      />
 
-        {/* コピー（モバイル=下 / PC=左） */}
-        <div className="relative order-2 flex items-center px-6 py-16 lg:order-1 lg:px-12 lg:py-0 xl:px-20">
-          <div className="w-full max-w-xl">
-            <p className="font-display text-sm tracking-[0.4em] text-stone opacity-0 [animation:fadeUp_1s_0.1s_forwards]">
-              CREATING REAL ESTATE VALUE
-            </p>
+      {/* 下部の可読性スクリム（白）。日本語コピーを英語見出しと分離 */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(to top, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.97) 24%, rgba(255,255,255,0.7) 38%, rgba(255,255,255,0) 52%)",
+        }}
+      />
 
-            <h1 className="mt-8 text-4xl font-light leading-[1.5] text-ink sm:text-5xl md:leading-[1.45] xl:text-6xl">
-              <span className="block opacity-0 [animation:fadeUp_1s_0.25s_forwards]">
+      {/* コピー（下部・左寄せ）。英語見出しと衝突しないよう下部にコンパクトに配置 */}
+      <div className="relative z-10 flex min-h-screen items-end">
+        <div className="mx-auto w-full max-w-7xl px-6 pb-14 lg:px-10 lg:pb-16">
+          <div className="max-w-2xl">
+            <span
+              className="mb-5 block h-px w-16 bg-gold opacity-0 [animation:fadeUp_1s_0.5s_forwards]"
+              aria-hidden="true"
+            />
+
+            <h1 className="text-2xl font-medium leading-[1.5] text-ink sm:text-3xl md:text-4xl">
+              <span className="opacity-0 [animation:fadeUp_1s_0.6s_forwards]">
                 不動産の価値を、
               </span>
-              <span className="mt-2 block font-normal opacity-0 [animation:fadeUp_1s_0.45s_forwards]">
+              <span className="text-gold opacity-0 [animation:fadeUp_1s_0.7s_forwards]">
                 磨き上げる。
               </span>
             </h1>
 
-            <p className="mt-10 max-w-md text-sm leading-loose text-stone opacity-0 [animation:fadeUp_1s_0.65s_forwards] md:text-base">
-              中古マンションの仕入れから買取再販まで。
-              <br className="hidden sm:block" />
-              相場分析・金融機関との連携・出口戦略を一気通貫で。
-              <br className="hidden sm:block" />
-              私たち{site.company.replace("株式会社", "")}が、資産価値を最大化します。
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-stone opacity-0 [animation:fadeUp_1s_0.8s_forwards] md:text-base">
+              中古マンションの仕入れから買取再販まで。テクノロジーと相場分析で、出口戦略まで一気通貫。私たち{site.brand}が資産価値を最大化します。
             </p>
 
-            <div className="mt-12 flex flex-col gap-4 opacity-0 [animation:fadeUp_1s_0.85s_forwards] sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 opacity-0 [animation:fadeUp_1s_0.95s_forwards] sm:flex-row">
               <CTAButton href="#contact" variant="primary">
                 無料相談する
               </CTAButton>

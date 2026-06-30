@@ -42,7 +42,7 @@ export default function Strengths() {
               <div className="flex h-full gap-6 border border-ink/10 bg-paper p-8 transition-colors duration-500 hover:border-ink/30">
                 <span className="font-display text-2xl text-ink">{s.no}</span>
                 <div>
-                  <p className="font-display text-[11px] tracking-[0.25em] uppercase text-stone">
+                  <p className="font-display text-[11px] tracking-[0.25em] uppercase text-gold">
                     {s.en}
                   </p>
                   <h3 className="mt-2 text-lg font-medium text-ink">

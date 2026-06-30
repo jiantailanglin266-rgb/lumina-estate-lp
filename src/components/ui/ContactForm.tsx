@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 type Status = "idle" | "submitting" | "success";
 
 const inputBase =
-  "w-full border border-ink/15 bg-paper px-4 py-3 text-sm text-ink placeholder:text-mist transition-colors duration-200 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand/40";
+  "w-full border border-ink/15 bg-paper px-4 py-3 text-sm text-ink placeholder:text-mist transition-colors duration-200 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/40";
 
 const labelBase = "block text-xs tracking-[0.12em] text-stone";
 
@@ -29,8 +29,8 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center border border-brand/40 bg-paper px-8 py-16 text-center">
-        <span className="font-display text-sm tracking-[0.3em] text-brand">
+      <div className="flex flex-col items-center justify-center border border-gold/40 bg-paper px-8 py-16 text-center">
+        <span className="font-display text-sm tracking-[0.3em] text-gold">
           THANK YOU
         </span>
         <p className="mt-6 text-lg font-medium text-ink">
@@ -42,7 +42,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-8 text-xs tracking-[0.12em] text-brand underline-offset-4 hover:underline"
+          className="mt-8 text-xs tracking-[0.12em] text-gold underline-offset-4 hover:underline"
         >
           フォームに戻る
         </button>
@@ -55,7 +55,7 @@ export default function ContactForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelBase}>
-            お名前 <span className="text-brand">必須</span>
+            お名前 <span className="text-gold">必須</span>
           </label>
           <input
             id="name"
@@ -70,7 +70,7 @@ export default function ContactForm() {
 
         <div>
           <label htmlFor="email" className={labelBase}>
-            メールアドレス <span className="text-brand">必須</span>
+            メールアドレス <span className="text-gold">必須</span>
           </label>
           <input
             id="email"

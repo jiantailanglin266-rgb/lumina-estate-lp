@@ -18,12 +18,12 @@ export default function Flow() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {flow.map((step, i) => (
             <Reveal key={step.no} delay={(i % 3) * 80}>
-              <div className="group relative h-full border border-ink/10 bg-paper p-8 transition-all duration-500 hover:border-brand/50">
+              <div className="group relative h-full border border-ink/10 bg-paper p-8 transition-all duration-500 hover:border-gold/50">
                 <div className="flex items-center justify-between">
-                  <span className="font-display text-5xl text-mist transition-colors duration-500 group-hover:text-brand">
+                  <span className="font-display text-5xl text-mist transition-colors duration-500 group-hover:text-gold">
                     {step.no}
                   </span>
-                  <span className="font-display text-[11px] tracking-[0.25em] uppercase text-brand">
+                  <span className="font-display text-[11px] tracking-[0.25em] uppercase text-gold">
                     {step.en}
                   </span>
                 </div>

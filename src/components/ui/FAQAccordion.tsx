@@ -25,10 +25,10 @@ export default function FAQAccordion({ items }: { items: Faq[] }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-6 py-6 text-left transition-colors duration-300 hover:text-brand"
+                className="flex w-full items-center justify-between gap-6 py-6 text-left transition-colors duration-300 hover:text-gold"
               >
                 <span className="flex items-start gap-4">
-                  <span className="font-display text-lg text-brand">Q</span>
+                  <span className="font-display text-lg text-gold">Q</span>
                   <span className="text-base font-medium leading-relaxed">
                     {item.q}
                   </span>

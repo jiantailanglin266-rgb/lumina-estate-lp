@@ -16,6 +16,9 @@
   --color-brand: #18181b;
   --color-brand-soft: #5b5b63;
   --color-brand-deep: #000000;
+  /* ブランドの差し色（ゴールド）。白地でも読みやすい深めの金 */
+  --color-gold: #b0853f;
+  --color-gold-soft: #cbab6d;
 
   --font-sans: var(--font-zen-kaku), "Hiragino Kaku Gothic ProN",
     "Noto Sans JP", "Yu Gothic", sans-serif;
