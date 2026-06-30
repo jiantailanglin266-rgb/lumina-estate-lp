@@ -1,5 +1,7 @@
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
+import aboutCity from "../../../public/images/about-city.png";
 
 /**
  * 私たちについて。理念／買取再販の強み／一気通貫。
@@ -33,6 +35,31 @@ export default function About() {
               ja="価値を見極め、価値を創る。"
               lead="私たちは、不動産という資産に新たな価値を吹き込む会社です。市場をデータで読み解き、磨き上げ、次の所有者へとつなぐ。その一連のプロセスすべてに、誠実さと専門性を込めています。"
             />
+
+            {/* 街並みビジュアル（ゴールドのオフセット額装） */}
+            <Reveal className="mt-12" delay={120}>
+              <figure>
+                <div className="relative">
+                  <span
+                    className="absolute -bottom-4 -right-4 hidden h-full w-full border border-gold/50 sm:block"
+                    aria-hidden="true"
+                  />
+                  <div className="group relative aspect-[4/5] overflow-hidden bg-cloud">
+                    <Image
+                      src={aboutCity}
+                      alt="水辺に建つモダンなタワーマンションの街並み"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <figcaption className="mt-8 flex items-center gap-3 text-[11px] tracking-[0.14em] text-stone">
+                  <span className="h-px w-6 bg-gold" aria-hidden="true" />
+                  水辺に広がる、次世代の住まい。
+                </figcaption>
+              </figure>
+            </Reveal>
           </div>
 
           <div className="lg:col-span-7">
