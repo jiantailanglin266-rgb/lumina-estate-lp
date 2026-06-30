@@ -87,19 +87,19 @@ export default function Hero() {
           from { opacity: 0; transform: translateY(28px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        /* 2枚クロスフェード：1サイクル8秒（各4秒表示・約0.5秒で交差） */
+        /* 2枚クロスフェード：1サイクル12秒（各4秒表示・約2秒かけてゆったり交差） */
         @keyframes heroFade {
-          0%     { opacity: 1; }
-          43.75% { opacity: 1; }
-          50%    { opacity: 0; }
-          93.75% { opacity: 0; }
-          100%   { opacity: 1; }
+          0%      { opacity: 1; }
+          33.33%  { opacity: 1; }
+          50%     { opacity: 0; }
+          83.33%  { opacity: 0; }
+          100%    { opacity: 1; }
         }
         .hero-slide {
-          animation: heroFade 8s ease-in-out infinite;
+          animation: heroFade 12s ease-in-out infinite;
           will-change: opacity;
         }
-        .hero-slide--2 { animation-delay: -4s; }
+        .hero-slide--2 { animation-delay: -6s; }
         @media (prefers-reduced-motion: reduce) {
           [style*="fadeUp"] { opacity: 1 !important; animation: none !important; transform: none !important; }
           .hero-slide { animation: none !important; }
